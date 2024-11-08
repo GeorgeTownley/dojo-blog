@@ -15,16 +15,17 @@ const Home = () => {
     "get your windscreen changed",
   ];
 
+  // useEffect (() => {intervalLogic, TIME}, []);
+
   useEffect(() => {
     let index = 0;
     const placeholder = setInterval(() => {
-      setFadeState("fade-out"); // Trigger fade-out
+      setFadeState("fade-out");
       setTimeout(() => {
-        // After fade-out finishes, change the text and trigger fade-in
         setExample(placeholderExamples[index]);
         index = (index + 1) % placeholderExamples.length;
-        setFadeState("fade-in"); // Trigger fade-in
-      }, 500); // Wait for fade-out duration (e.g., 500ms)
+        setFadeState("fade-in");
+      }, 500);
     }, 6000);
 
     return () => clearInterval(placeholder);
