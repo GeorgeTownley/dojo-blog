@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     let index = 0;
-    const interval = setInterval(() => {
+    const placeholder = setInterval(() => {
       setFadeState("fade-out"); // Trigger fade-out
       setTimeout(() => {
         // After fade-out finishes, change the text and trigger fade-in
@@ -27,7 +27,7 @@ const Home = () => {
       }, 500); // Wait for fade-out duration (e.g., 500ms)
     }, 6000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(placeholder);
   }, []);
 
   return (
